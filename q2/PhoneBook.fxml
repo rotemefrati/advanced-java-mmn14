@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.maman14.q2.PhoneBookController">
+   <top>
+      <VBox prefHeight="137.0" prefWidth="744.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="46.0" prefWidth="630.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="addName" promptText="Name" />
+                  <TextField fx:id="addNumber" promptText="Phone Number" />
+                  <Button mnemonicParsing="false" onAction="#addContact" text="Add Contact" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="47.0" prefWidth="744.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="updateName" promptText="Name" />
+                  <TextField fx:id="updateNumber" promptText="Phone Number" />
+                  <Button mnemonicParsing="false" onAction="#updateContact" text="Update Contact" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="744.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="removeName" promptText="Name" />
+                  <Button mnemonicParsing="false" onAction="#removeContact" text="Remove Contact" />
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="contactsTable" prefHeight="326.0" prefWidth="630.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="nameCol" prefWidth="301.0" text="Name" />
+          <TableColumn fx:id="numberCol" prefWidth="328.0" text="Phone Number" />
+        </columns>
+      </TableView>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER" prefHeight="75.0" prefWidth="744.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#clearName" text="Clear" />
+            <TextField fx:id="searchName" alignment="CENTER" prefHeight="30.0" prefWidth="427.0" promptText="Search by name" />
+            <Button mnemonicParsing="false" onAction="#searchName" text="Search" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
